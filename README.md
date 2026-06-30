@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿# Smart Crop Yield Prediction Platform
 
 A production-oriented full-stack platform for farmers and agriculture officers. It includes a React dashboard, FastAPI backend, SQLite/PostgreSQL persistence, JWT authentication, OpenWeatherMap integration, ESP32 sensor ingestion, multilingual UI, Tamil voice input, charts, map view, recommendations, and automatic loading of the existing Random Forest `.pkl` model files.
@@ -215,3 +216,7 @@ npm run dev -- --host 127.0.0.1 --port 5173
 Windows Firewall may ask to allow Python/Uvicorn. Allow it on your private network so ESP32 requests can reach the backend.
 
 
+=======
+# Ai-powered-crop-yield-prediction-and-smart-farming-advisory
+AI Powered Crop Yield Prediction and Smart Farming Advisory helps farmers predict crop yield using crop, season, area, rainfall, weather, and soil data. It also gives useful advice on irrigation, fertilizer, pest control, and crop management to improve productivity and reduce farming risks.
+>>>>>>> 7e373f1b8ef099aa0d0b621eb940ce030cbb5d75

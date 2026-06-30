@@ -1,7 +1,21 @@
 import axios from "axios";
 
+const DEPLOYED_API_BASE_URL = "https://smart-crop-yield-platform.onrender.com/api";
+const LOCAL_API_BASE_URL = "http://127.0.0.1:8000/api";
+
+function resolveApiBaseUrl() {
+  const configured = import.meta.env.VITE_API_BASE_URL;
+  if (configured) return configured;
+
+  const hostname = window.location.hostname;
+  const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
+  return isLocal ? LOCAL_API_BASE_URL : DEPLOYED_API_BASE_URL;
+}
+
+export const API_BASE_URL = resolveApiBaseUrl();
+
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8001/api",
+  baseURL: API_BASE_URL,
   timeout: 15000
 });
 
@@ -60,5 +74,3 @@ export async function saveSensorCalibration(payload) {
   const { data } = await api.post("/sensors/calibration", payload);
   return data;
 }
-
-
